@@ -1,0 +1,3 @@
+akkascala:
+  schedule:
+    threadNum: 10
