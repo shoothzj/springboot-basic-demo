@@ -1,3 +1,5 @@
 akkascala:
+  heartbeat:
+    port: 30000
   schedule:
     threadNum: 10
