@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 /**
  * @author hezhangjian
+ * @see com.github.shoothzj.sb.basic.config.ScheduleConfig
  * 使用定时任务,需要在Main哪里加上@EnableScheduling
  * 使用spring的定时任务,不需要捕获异常
  */
@@ -14,11 +15,11 @@ import org.springframework.stereotype.Service;
 public class ScheduleService {
 
     /**
-     * 一秒执行一次的定时任务
+     * 一分钟执行一次的定时任务
      */
-    @Scheduled(cron = "0/1 * * * * ?")
+    @Scheduled(cron = "0 * * * * ?")
     public void schedule() {
-        log.info("Hello world");
+        log.info("One minute schedule job.");
     }
 
 }

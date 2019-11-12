@@ -1,7 +1,7 @@
 package com.github.shoothzj.sb.basic;
 
 import com.github.shoothzj.javatool.service.JacksonService;
-import com.github.shoothzj.sb.basic.controller.EchoPostController;
+import com.github.shoothzj.sb.basic.controller.EchoController;
 import com.github.shoothzj.sb.basic.module.EchoPostReq;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
@@ -20,8 +20,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  */
 @Slf4j
 @RunWith(SpringRunner.class)
-@WebMvcTest(EchoPostController.class)
-public class EchoPostControllerTest {
+@WebMvcTest(EchoController.class)
+public class EchoControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
@@ -29,7 +29,7 @@ public class EchoPostControllerTest {
     @Test
     public void testEcho() throws Exception {
         EchoPostReq echoPostReq = new EchoPostReq();
-        echoPostReq.setBody("req");
+        echoPostReq.setContent("req");
         mockMvc.perform(post("/echo")
                 .contentType(MediaType.APPLICATION_JSON_VALUE)
                 .content(JacksonService.toJson(echoPostReq)))

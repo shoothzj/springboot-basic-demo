@@ -1,14 +1,15 @@
 package com.github.shoothzj.sb.basic.module;
 
+import io.swagger.annotations.ApiModel;
 import lombok.Data;
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * @author hezhangjian
  */
 @Data
+@ApiModel(description = "Simple Echo Resp")
 public class EchoPostResp {
 
-    String body;
+    String content;
 
 }
