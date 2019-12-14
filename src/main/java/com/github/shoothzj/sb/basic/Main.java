@@ -3,6 +3,7 @@ package com.github.shoothzj.sb.basic;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
 /**
@@ -10,6 +11,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
  */
 @Slf4j
 @EnableScheduling
+@EnableAspectJAutoProxy
 @SpringBootApplication
 public class Main {
 
