@@ -32,6 +32,8 @@ public class HeartBeatConnector {
             connector.setPort(heartPort);
             connector.setSecure(false);
             Http11NioProtocol handler = (Http11NioProtocol) connector.getProtocolHandler();
+            handler.setMaxKeepAliveRequests(3);
+            handler.setKeepAliveTimeout(5000);
             handler.setMaxThreads(5);
             handler.setMinSpareThreads(2);
             return connector;
