@@ -26,7 +26,10 @@ public class MetricController {
         Map<String, String> map = new HashMap<>();
         meterRegistry.forEachMeter(meter -> {
             Meter.Id id = meter.getId();
-            meter.measure().forEach(measurement -> map.put(id.getName() + measurement.getStatistic().getTagValueRepresentation(), String.valueOf(measurement.getValue())));
+            meter.measure().forEach(measurement -> {
+                String key = id.getName() + measurement.getStatistic().getTagValueRepresentation();
+                map.put(key, String.valueOf(measurement.getValue()));
+            });
         });
     }
 

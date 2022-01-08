@@ -21,8 +21,11 @@ public class ScheduleConfig implements SchedulingConfigurer {
     private int threadNum;
 
     @Override
-    public void configureTasks( ScheduledTaskRegistrar taskRegistrar) {
-        ScheduledThreadPoolExecutor executor = new ScheduledThreadPoolExecutor(threadNum, new DefaultThreadFactory("Schedule Pool"), new SimpleLogRejectHandler());
+    public void configureTasks(ScheduledTaskRegistrar taskRegistrar) {
+        ScheduledThreadPoolExecutor executor =
+                new ScheduledThreadPoolExecutor(threadNum,
+                        new DefaultThreadFactory("Schedule Pool"),
+                        new SimpleLogRejectHandler());
         taskRegistrar.setScheduler(executor);
     }
 }

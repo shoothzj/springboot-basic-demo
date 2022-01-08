@@ -5,7 +5,6 @@ import org.apache.catalina.AccessLog;
 import org.apache.catalina.connector.Request;
 import org.apache.catalina.connector.Response;
 import org.apache.catalina.valves.AccessLogValve;
-import org.slf4j.Logger;
 
 import java.io.CharArrayWriter;
 

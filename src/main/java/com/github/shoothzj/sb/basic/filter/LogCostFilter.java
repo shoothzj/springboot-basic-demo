@@ -3,7 +3,11 @@ package com.github.shoothzj.sb.basic.filter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
-import javax.servlet.*;
+import javax.servlet.Filter;
+import javax.servlet.FilterChain;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
 import java.io.IOException;
 
 /**
@@ -14,7 +18,8 @@ import java.io.IOException;
 public class LogCostFilter implements Filter {
 
     @Override
-    public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
+    public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse,
+                         FilterChain filterChain) throws IOException, ServletException {
         long start = System.currentTimeMillis();
         filterChain.doFilter(servletRequest, servletResponse);
         log.info("filter calculate cost is [{}]", System.currentTimeMillis() - start);
